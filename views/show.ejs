@@ -1,8 +1,20 @@
 <% include ./partials/header %>
 <div class="ui main text container segment">
-<div class="ui huge header"><%= blogg.title %></div>
-  <img class="ui bordered medium image" src="<%= blogg.image %>" >
-    <span><%= blogg.created %></span>
-  <p><%= blogg.body %></p>
+<div class="ui huge header centered"><%= blogg.title %></div>
+  <div class="ui top attached">
+    <div class="item">
+      <img class="ui centered rounded image" src="<%= blogg.image %>" >
+      <div class="content">
+        <span><%= blogg.created.toDateString() %></span>
+      </div>
+      <div class="description">
+        <p><%- blogg.body %></p>
+        <a class="ui orange basic button" href="/blogs/<%= blogg._id %>/edit">Edit This Blog?</a>
+        <form style="display: inline" action="/blogs/<%= blogg._id %>?_method=DELETE" method="POST">
+          <button class="ui red basic button" type="submit">Blog Delete Madi?</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <% include ./partials/header %>
