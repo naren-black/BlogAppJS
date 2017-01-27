@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<h1>Index of images</h1>
+<% blogs.forEach(function(blog) { %>
+  <div>
+    <h2><%= blog.title %></h2>
+    <img class="ui medium image" src="<%= blog.image %>" >
+    <span><%= blog.created %></span>
+    <p><%= blog.body %></p>
+    <a href="/blogs/<%= blog._id %>">Show madi</a>
+  </div>
+<% }); %>
+
+<% include ./partials/footer %>
